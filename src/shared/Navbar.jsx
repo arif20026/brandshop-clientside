@@ -1,4 +1,7 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
+
 
 const Navbar = () => {
     const navLinks = <>
@@ -9,6 +12,16 @@ const Navbar = () => {
         <li><NavLink to="/addProduct">Add Product</NavLink></li>
 
     </>
+
+  
+
+    const {user, logOut} =useContext(AuthContext)
+
+    const handleLogOUt = () => {
+        logOut()
+        .then(() => console.log('user logged out successfully'))
+        .catch(error => console.log(error))
+    }
     return (
         <div>
 
@@ -22,7 +35,6 @@ const Navbar = () => {
                            {navLinks}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">daisyUI</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -30,7 +42,16 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <NavLink to="/login" className="btn bg-slate-400">Login</NavLink>
+
+                    {
+                        user && <div className="flex justify-center items-center gap-2">
+                            <p>{user.displayName}</p>
+                            <img src={user.photoURL} className="w-10  mr-4 rounded-full" alt="" />
+                        </div>
+                    }
+                    {
+                        user?  <button className="btn" onClick={handleLogOUt}>LogOut</button>:<NavLink to="/login" className="btn bg-slate-400">Login</NavLink>
+                    }
                 </div>
             </div>
 

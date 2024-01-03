@@ -1,13 +1,15 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { FaGoogle } from "react-icons/fa";
+
 
 const Login = () => {
 
-    const { signIn } = useContext(AuthContext)
-    const location =useLocation()
+    const { signIn, signInWithGoogle } = useContext(AuthContext)
+    const location = useLocation()
     const navigate = useNavigate()
-    const [loginError,setLoginError]=useState('')
+    const [loginError, setLoginError] = useState('')
 
     const handleLoginUser = e => {
         e.preventDefault()
@@ -24,7 +26,7 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 console.log(result)
-                navigate(location?.state? location.state:"/")
+                navigate(location?.state ? location.state : "/")
 
             })
 
@@ -33,7 +35,15 @@ const Login = () => {
                 setLoginError('password is not correct')
             })
 
+    }
 
+    const handleSignInWithGoogle = () => {
+        signInWithGoogle()
+            .then(result => {
+                console.log(result)
+                navigate(location?.state ? location.state : ("/"))
+            })
+            .catch(error => console.log(error))
     }
 
     return (
@@ -55,10 +65,16 @@ const Login = () => {
                                 <span className="label-text">Password</span>
                             </label>
                             <input type="password" placeholder="password" name="password" className="input input-bordered" required />
-                            
+
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
+                            <p className="flex text-center px-24">or</p>
+
+                            <button className="btn btn-primary" onClick={handleSignInWithGoogle}>Sign in with google <FaGoogle />
+                            </button>
+
+
                             <p>New User? <Link to="/register" className="text-blue-600 font-bold text-xl my-4">Register</Link></p>
                         </div>
 
