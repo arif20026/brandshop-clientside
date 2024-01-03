@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import { Link } from "react-router-dom";
 
 const Register = () => {
     const { createUser } = useContext(AuthContext)
@@ -68,12 +69,10 @@ const Register = () => {
                                 <span className="label-text">Password</span>
                             </label>
                             <input type="password" placeholder="password" name="password" className="input input-bordered" required />
-                            <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                            </label>
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Register</button>
+                            <p>Already have an Account ? Please <Link to="/login" className="text-blue-600 font-bold text-xl my-4">Login</Link></p>
                         </div>
                         {
                             registerError && <p className="text-red-500  font-bold text-3xl">{registerError}</p>
