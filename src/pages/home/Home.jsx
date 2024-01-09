@@ -29,15 +29,17 @@ const Home = () => {
     console.log("Unique Brands:", uniqueBrands);
 
     return (
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col text-center items-center justify-center">
             <Banner></Banner>
             <h3 className="text-3xl font-bold my-6">Choose Products of your Favorite brand
             </h3>
+            <div className="lg:grid grid-cols-3 gap-32">
             {
                 uniqueBrands.map(brand => (
                     <CategoryProduct key={brand.brandName} brandName={brand.brandName} brandImage={brand.brandImage} />
                 ))
             }
+            </div>
             <Offer></Offer>
             <Features></Features>
         </div>

@@ -8,7 +8,7 @@ const CategoryProductDetails = () => {
     const { handleAddToCart } = useCart();
 
 
-    
+
     return (
         <div>
 
@@ -43,26 +43,27 @@ const CategoryProductDetails = () => {
                     </div>
                 </div>
             </div>
+            <div className="flex flex-col items-center justify-center">
 
-            {
+                {
 
-                products.map(product => <div key={product._id} className="grid  mx-52 my-10   items-center border border-red-400  " >
+                    products.map(product => <div key={product._id} className="grid  mx-10 my-10   items-center   " >
 
-                    <p><span className="font-bold">Product Name:</span> {product.name}</p>
-                    <img src={product.image} alt="" className="w-36 h-36" />
-                    <p><span className="font-bold">Brand:</span> {product.brandName}</p>
-                    <p><span className="font-bold">Type:</span> {product.type}</p>
-                    <p><span className="font-bold">Price: $</span> {product.price}</p>
-                    <p><span className="font-bold">Rating:</span> {product.rating}</p>
-                    <Link to={`/productDetails/${product._id}` } ><button className="btn btn-primary mt-4">Details</button></Link>
-                    <Link to={`/updateProduct/${product._id}` } ><button className="btn btn-primary mt-4">Update</button></Link>
-                    <button className="btn btn-primary my-4" onClick={() => handleAddToCart(product)}>Add to Cart</button>
+                        <img src={product.image} alt="" className="w-36 h-36" />
+                        <p><span className="font-bold">Product Name:</span> {product.name}</p>
+                        <p><span className="font-bold">Brand:</span> {product.brandName}</p>
+                        <p><span className="font-bold">Type:</span> {product.type}</p>
+                        <p><span className="font-bold">Price: $</span> {product.price}</p>
+                        <p><span className="font-bold">Rating:</span> {product.rating}</p>
+                        <Link to={`/productDetails/${product._id}`} ><button className="btn btn-primary mt-4">Details</button></Link>
+                        <Link to={`/updateProduct/${product._id}`} ><button className="btn btn-primary mt-4">Update</button></Link>
 
-                </div>)
+                    </div>)
 
-            }
+                }
+            </div>
 
-           
+
 
 
 
