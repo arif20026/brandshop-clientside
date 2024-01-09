@@ -1,6 +1,8 @@
 import { useLoaderData } from "react-router-dom";
 import CategoryProduct from "../../categoryProduct/CategoryProduct";
 import Banner from "./Banner";
+import Offer from "./Offer";
+import Features from "./Features";
 
 const Home = () => {
     const products = useLoaderData();
@@ -27,13 +29,17 @@ const Home = () => {
     console.log("Unique Brands:", uniqueBrands);
 
     return (
-        <div>
+        <div className="flex flex-col items-center justify-center">
             <Banner></Banner>
+            <h3 className="text-3xl font-bold my-6">Choose Products of your Favorite brand
+            </h3>
             {
                 uniqueBrands.map(brand => (
                     <CategoryProduct key={brand.brandName} brandName={brand.brandName} brandImage={brand.brandImage} />
                 ))
             }
+            <Offer></Offer>
+            <Features></Features>
         </div>
     );
 };
