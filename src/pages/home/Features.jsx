@@ -16,7 +16,7 @@ const Features = () => {
                </div>
                <div  className="flex flex-col justify-center items-center ">
                <img src="https://i.ibb.co/bLC8Mhn/48h.jpg" alt="" className="w-20 h-20"/>
-               <h2 className="card-title">Delivery within 48 hours</h2>
+               <h2 className="card-title">Delivery Within 48 hours</h2>
                 
                </div>
                 
