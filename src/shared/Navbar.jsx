@@ -25,7 +25,7 @@ const Navbar = () => {
 
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
-                    <img src="/src/assets/e-commerce-logo-design-vector-260nw-1727767885.jpg" alt="" className="w-14 h-14" />
+                    <img src="https://i.ibb.co/8bFH5GC/e-commerce-logo-design-vector-260nw-1727767885.jpg" alt="" className="w-14 h-14" />
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>

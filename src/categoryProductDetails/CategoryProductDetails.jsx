@@ -55,8 +55,8 @@ const CategoryProductDetails = () => {
                         <p><span className="font-bold">Type:</span> {product.type}</p>
                         <p><span className="font-bold">Price: $</span> {product.price}</p>
                         <p><span className="font-bold">Rating:</span> {product.rating}</p>
-                        <Link to={`/productDetails/${product._id}`} ><button className="btn btn-primary mt-4">Details</button></Link>
-                        <Link to={`/updateProduct/${product._id}`} ><button className="btn btn-primary mt-4">Update</button></Link>
+                        <Link to={`/productDetails/${product.brandName}/${product._id}`} ><button className="btn btn-primary mt-4">Details</button></Link>
+                        <Link to={`/updateProduct/${product.brandName}/${product._id}`} ><button className="btn btn-primary mt-4">Update</button></Link>
 
                     </div>)
 

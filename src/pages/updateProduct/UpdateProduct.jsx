@@ -22,7 +22,7 @@ const UpdateProduct = () => {
 
         console.log(updatedProduct)
 
-        fetch(`http://localhost:5000/products/${_id}`,{
+        fetch(`https://assignment-10-server-side-ecru.vercel.app/products/${brandName}/${_id}`,{
             method:'PUT',
             headers: {'content-type': 'application/json'},
             body: JSON.stringify(updatedProduct)

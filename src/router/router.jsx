@@ -13,7 +13,7 @@ import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../pages/errorPage/ErrorPage";
 import UpdateProduct from "../pages/updateProduct/UpdateProduct";
 import Products from "../pages/Products/Products";
-import CategoryProductDetails from "../categoryproductdetails/CategoryProductDetails";
+import CategoryProductDetails from "../categoryProductDetails/CategoryProductDetails";
 import ProductDetails from '../pages/productDetails/ProductDetails'
   
   const router = createBrowserRouter([
@@ -25,7 +25,7 @@ import ProductDetails from '../pages/productDetails/ProductDetails'
         {
             path:'/',
             element:<Home></Home>,
-            loader: () => fetch('http://localhost:5000/products')
+            loader: () => fetch('https://assignment-10-server-side-ecru.vercel.app/products')
         },
         {
             path:'/login',
@@ -38,27 +38,27 @@ import ProductDetails from '../pages/productDetails/ProductDetails'
         {
             path:'/cart',
             element:<Cart></Cart>,
-            loader: () => fetch('http://localhost:5000/cart')
+            loader: () => fetch('https://assignment-10-server-side-ecru.vercel.app/cart')
         },
         {
             path:'/products',
             element:<Products></Products>,
-            loader: () => fetch('http://localhost:5000/products')
+            loader: () => fetch('https://assignment-10-server-side-ecru.vercel.app/products')
         },
         {
-            path:'/:brandName',
+            path:'/products/:brandName',
             element:<CategoryProductDetails></CategoryProductDetails>,
-            loader: ({params}) => fetch(`http://localhost:5000/${params.brandName}`)
+            loader: ({params}) => fetch(`https://assignment-10-server-side-ecru.vercel.app/products/${params.brandName}`)
         },
         {
-            path:'/updateProduct/:id',
+            path:'/updateProduct/:brandName/:id',
             element:<PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-            loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`)
+            loader: ({params}) => fetch(`https://assignment-10-server-side-ecru.vercel.app/products/${params.brandName}/${params.id}`)
         },
         {
-            path:'/productDetails/:id',
+            path:'/productDetails/:brandName/:id',
             element:<PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
-            loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`)
+            loader: ({params}) => fetch(`https://assignment-10-server-side-ecru.vercel.app/products/${params.brandName}/${params.id}`) .then(res => res.json())
         },
       
         {

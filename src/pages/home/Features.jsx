@@ -5,17 +5,17 @@ const Features = () => {
             <h3 className="text-3xl font-bold">Our Features</h3>
             <div className="card-body grid grid-cols-1 lg:grid-cols-3 lg:gap-48">
                <div  className="flex flex-col justify-center items-center ">
-               <img src="/src/assets/cash on delivery.jpg" alt="" className="w-20 h-20"/>
+               <img src="https://i.ibb.co/XjM8HGr/cash-on-delivery.jpg" alt="" className="w-20 h-20"/>
                <h2 className="card-title">Cash on Delivery</h2>
                 
                </div>
                <div className="flex flex-col justify-center items-center ">
-               <img src="/src/assets/download.jpg" alt="" className="w-20 h-20"/>
+               <img src="https://i.ibb.co/938xnHt/download.jpg" alt="" className="w-20 h-20"/>
                <h2 className="card-title">Easy Return Policy</h2>
                 
                </div>
                <div  className="flex flex-col justify-center items-center ">
-               <img src="/src/assets/48h.jpg" alt="" className="w-20 h-20"/>
+               <img src="https://i.ibb.co/bLC8Mhn/48h.jpg" alt="" className="w-20 h-20"/>
                <h2 className="card-title">Delivery within 48 hours</h2>
                 
                </div>

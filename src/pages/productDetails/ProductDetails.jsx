@@ -10,7 +10,7 @@ const ProductDetails = () => {
 
   const addToCart = () => {
     // Make a POST request to add the product to the cart
-    fetch('http://localhost:5000/cart', {
+    fetch('https://assignment-10-server-side-ecru.vercel.app/cart', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({
@@ -51,7 +51,7 @@ const ProductDetails = () => {
         <div className="card-body">
           <h2 className="card-title ">
             <span className="font-bold">Name: </span>
-            {name}!
+            {name}
           </h2>
           <p>
             <span className="font-bold">BrandName: </span>

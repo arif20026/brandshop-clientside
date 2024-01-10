@@ -19,7 +19,7 @@ const AddProduct = () => {
 
         // sending newProduct to server
 
-        fetch('http://localhost:5000/products',{
+        fetch('https://assignment-10-server-side-ecru.vercel.app/products',{
             method:'POST',
             headers:{'content-type' : 'application/json'},
             body:JSON.stringify(newProduct)
